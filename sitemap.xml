@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://littleylv.github.io/collections/index.html</loc>
+    
+    <lastmod>2018-02-09T09:45:30.260Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://littleylv.github.io/about/index.html</loc>
     
-    <lastmod>2017-07-19T02:12:52.151Z</lastmod>
+    <lastmod>2018-02-09T09:37:56.803Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://littleylv.github.io/2017/07/ACGs-Movies-TVs/</loc>
+    
+    <lastmod>2018-02-04T07:16:56.000Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://littleylv.github.io/categories/index.html</loc>
     
     <lastmod>2017-07-19T02:02:42.559Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://littleylv.github.io/2017/07/ACGs-Movies-TVs/</loc>
-    
-    <lastmod>2017-07-16T07:16:56.000Z</lastmod>
     
   </url>
   

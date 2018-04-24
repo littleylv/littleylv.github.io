@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="php," />
+  <meta name="keywords" content="Xcode," />
 
 
-<meta name="description" content="前些时候在利用PHPExcel生成excel文件的时候出了点问题，特此记录。">
-<meta name="keywords" content="php">
+<meta name="description" content="清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。">
+<meta name="keywords" content="Xcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHPExcel Out Of Memory">
-<meta property="og:url" content="https://littleylv.github.io/2016/08/phpexcel-out-of-memory/index.html">
+<meta property="og:title" content="清理 Xcode 缓存">
+<meta property="og:url" content="https://littleylv.github.io/2018/04/clean-xcode-cache/index.html">
 <meta property="og:site_name" content="十月初壹">
-<meta property="og:description" content="前些时候在利用PHPExcel生成excel文件的时候出了点问题，特此记录。">
+<meta property="og:description" content="清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-07-10T08:10:52.772Z">
+<meta property="og:updated_time" content="2018-04-24T16:00:43.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHPExcel Out Of Memory">
-<meta name="twitter:description" content="前些时候在利用PHPExcel生成excel文件的时候出了点问题，特此记录。">
+<meta name="twitter:title" content="清理 Xcode 缓存">
+<meta name="twitter:description" content="清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://littleylv.github.io/2016/08/phpexcel-out-of-memory/"/>
+  <link rel="canonical" href="https://littleylv.github.io/2018/04/clean-xcode-cache/"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>PHPExcel Out Of Memory | 十月初壹</title>
+  <title>清理 Xcode 缓存 | 十月初壹</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2016/08/phpexcel-out-of-memory/">
+    <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2018/04/clean-xcode-cache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LittleyLv">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PHPExcel Out Of Memory</h1>
+          <h1 class="post-title" itemprop="name headline">清理 Xcode 缓存</h1>
         
 
         <div class="post-meta">
@@ -330,7 +330,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-05T00:00:00+08:00">2016-08-05</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T23:27:25+08:00">2018-04-24</time>
             
 
             
@@ -351,7 +351,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T16:10:52+08:00">2017-07-10</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-25T00:00:43+08:00">2018-04-25</time>
             
           </span>
 
@@ -381,7 +381,7 @@
 
           
           
-             <span id="/2016/08/phpexcel-out-of-memory/" class="leancloud_visitors" data-flag-title="PHPExcel Out Of Memory">
+             <span id="/2018/04/clean-xcode-cache/" class="leancloud_visitors" data-flag-title="清理 Xcode 缓存">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,6 +403,8 @@
           
 
           
+              <div class="post-description">清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。</div>
+          
 
         </div>
       </header>
@@ -417,24 +419,27 @@
       
 
       
-        <p>前些时候在利用PHPExcel生成excel文件的时候出了点问题，特此记录。<br><a id="more"></a></p>
-<p>功能不复杂，就是从数据库取出资料，写进模板的xlsx文件里，最后输出文件流给浏览器下载：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$objPHPExcel = \PHPExcel_IOFactory::load(<span class="string">'foo.xlsx'</span>);</div><div class="line">$objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);</div><div class="line">$num = <span class="number">2</span>;</div><div class="line"><span class="keyword">foreach</span>($query <span class="keyword">as</span> $item)&#123;</div><div class="line">	$objPHPExcel-&gt;getActiveSheet()</div><div class="line">		-&gt;setCellValue(<span class="string">'A'</span>.$num, <span class="string">'somethingA'</span>)</div><div class="line">		-&gt;setCellValue(<span class="string">'B'</span>.$num, <span class="string">'somethingB'</span>)</div><div class="line">		<span class="comment">//.....       </span></div><div class="line">		-&gt;setCellValue(<span class="string">'Z'</span>.$num, <span class="string">'somethingZ'</span>);</div><div class="line">	$num++;</div><div class="line">&#125;</div><div class="line">$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, <span class="string">'Excel2007'</span>);</div><div class="line">$objWriter-&gt;save(<span class="string">'php://output'</span>);</div></pre></td></tr></table></figure>
-<p>本地开发的时候是没有问题的。当到正式环境的时候，由于数据量大了，竟然报错了，超内存了：</p>
-<pre><code>Fatal error: Allowed memory size of XXXX bytes exhausted (tried to allocate XXXX bytes) in XXX
-</code></pre><p>网上搜索了一下解决办法，找到这个地方：<a href="http://stackoverflow.com/questions/4817651/phpexcel-runs-out-of-256-512-and-also-1024mb-of-ram" target="_blank" rel="noopener">php - PHPExcel runs out of 256, 512 and also 1024MB of RAM - Stack Overflow</a>。根据回答里的说法，好像是phpexcel存在的问题：</p>
-<blockquote>
-<p>There’s plenty been written about the memory usage of PHPExcel on the PHPExcel forum; so reading through some of those previous discussions might give you a few ideas. PHPExcel holds an “in memory” representation of a spreadsheet, and is susceptible to PHP memory limitations.</p>
-<p>The physical size of the file is largely irrelevant… it’s much more important to know how many cells (rows*columns on each worksheet) it contains.</p>
-<p>The “rule of thumb” that I’ve always used is an average of about 1k/cell, so a 5M cell workbook is going to require 5GB of memory. However, there are a number of ways that you can reduce that requirement. These can be combined, depending on exactly what information you need to access within your workbook, and what you want to do with it.</p>
-</blockquote>
-<p>要占用这么多的内存啊！也有人说修改<code>ini_set(&#39;memory_limit&#39;, 0);</code>，可是这太不靠谱了，万一内存爆了。</p>
-<p>万幸，有人提到了另一个在内存处理方面更加强大的工具：box/spout<br>，这是他的github主页：<a href="https://github.com/box/spout" target="_blank" rel="noopener">box/spout: Read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way</a>。按照项目的简介：<code>Spout is a PHP library to read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way. Contrary to other file readers or writers, it is capable of processing very large files while keeping the memory usage really low (less than 3MB).</code>。感觉很不错的样子，完全可以控制内存在正常范围内！</p>
-<p>composer了他的项目后，修改我的代码如下：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Box</span>\<span class="title">Spout</span>\<span class="title">Writer</span>\<span class="title">WriterFactory</span> <span class="title">as</span> <span class="title">SpoutWriterFactory</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Box</span>\<span class="title">Spout</span>\<span class="title">Common</span>\<span class="title">Type</span> <span class="title">as</span> <span class="title">SpoutType</span>;</div><div class="line">	</div><div class="line">$writer = SpoutWriterFactory::create(SpoutType::XLSX);</div><div class="line">$writer-&gt;openToBrowser(<span class="string">'bar.xlsx'</span>);</div><div class="line"><span class="keyword">foreach</span>($query <span class="keyword">as</span> $item)&#123;</div><div class="line">	$row = [</div><div class="line">		<span class="string">'somethingA'</span>,</div><div class="line">		<span class="string">'somethingB'</span>,</div><div class="line">		<span class="comment">//......</span></div><div class="line">		<span class="string">'somethingZ'</span></div><div class="line">	];</div><div class="line">	$writer-&gt;addRow($row);</div><div class="line">&#125;</div><div class="line">$writer-&gt;close();</div></pre></td></tr></table></figure>
-<p>经测试，在同样数据量的情况下，spout完全没有内存方面的压力，而且速度相比PHPExcel更快。 :)</p>
-<p>当然，spout在表格渲染上也有一些小缺陷，比如目前我需要用到的单元格合并就没法做到；另外由于处理方式的不同，无法直接针对模板文件read进来改写，只能经过reader拷贝row进来放到writer文件。但是相对内存方面的大问题，这种可以忽略了嘿嘿。</p>
-<p>完。</p>
+        <p>Xcode 是个逆天的存在。本身占用了 11+G 的硬盘，平常用着用着还会生成很多缓存数据。虽然缓存可以加快编译、运行等速度，但 128G 的小硬盘根本经不起折腾，所以需要定期清理一下空间。</p>
+<p>以下为网络上搜集到的资料，运行完后，曾经释放了 20G 的空间。</p>
+<p>注：以下基于 Xcode 9.3 版本，其他版本位置可能有所不同。</p>
+<h4 id="移除运行安装-APP-产生的缓存文件-DerivedData"><a href="#移除运行安装-APP-产生的缓存文件-DerivedData" class="headerlink" title="移除运行安装 APP 产生的缓存文件(DerivedData)"></a>移除运行安装 APP 产生的缓存文件(DerivedData)</h4><p>只要重新运行 Xcode 就一定会重新生成，而且会随着运行程序的增多，占用空间会越来越大。删除后在重新运行程序可能会稍微慢一点，建议定期清理。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Developer/Xcode/DerivedData</div></pre></td></tr></table></figure>
+<h4 id="移除-APP-打包的ipa历史版本-Archives"><a href="#移除-APP-打包的ipa历史版本-Archives" class="headerlink" title="移除 APP 打包的ipa历史版本(Archives)"></a>移除 APP 打包的ipa历史版本(Archives)</h4><p>删除后不可恢复，文件夹是按照日期排列的，所以如果你不想全部删除，就只保留最新的几个版本就好了，个人建议全部删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Developer/Xcode/Archives</div></pre></td></tr></table></figure>
+<h4 id="移除-APP-打包的app-icon历史版本-Archives"><a href="#移除-APP-打包的app-icon历史版本-Archives" class="headerlink" title="移除 APP 打包的app icon历史版本(Archives)"></a>移除 APP 打包的app icon历史版本(Archives)</h4><p>删除后不可恢复，文件夹是Bundle Idenifier排列的，然后再按照archive的版本号排列的，如果你看每个版本内的内容，其实就是你的app icon，个人建议全部删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Developer/Xcode/Products</div></pre></td></tr></table></figure>
+<h4 id="移除模拟器的缓存数据-Devices"><a href="#移除模拟器的缓存数据-Devices" class="headerlink" title="移除模拟器的缓存数据(Devices)"></a>移除模拟器的缓存数据(Devices)</h4><p>模拟器的相关数据。每个版本的模拟器占用的内存空间大约为10M左右。每个文件夹里包含的就是一个特定系统版本的设备的数据。每个文件夹对应哪个设备可以在其下device.plist中查看。删除之后，如果立即运行程序会报错，先关闭Xcode，再重新打开程序，运行即可。运行该路径下会立马生成模拟器对应版本的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Developer/CoreSimulator/Devices</div></pre></td></tr></table></figure>
+<h4 id="移除对旧设备的支持-iOS-DeviceSupport"><a href="#移除对旧设备的支持-iOS-DeviceSupport" class="headerlink" title="移除对旧设备的支持(iOS DeviceSupport)"></a>移除对旧设备的支持(iOS DeviceSupport)</h4><p>一般是占用内存空间最大的文件夹，即使全部删，再连接设备调试时，会重新自动生成。一般iOS只向下兼容两个版本就可以了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport</div></pre></td></tr></table></figure>
+<h4 id="移除旧版本的模拟器支持"><a href="#移除旧版本的模拟器支持" class="headerlink" title="移除旧版本的模拟器支持"></a>移除旧版本的模拟器支持</h4><p>如果你不小心安装了很多个版本的模拟器，那么你可以删除一些旧版本的。但是当你需要旧版本的模拟器时，就需要重新下载了。建议留下1~2个版本就好了，其余的都删了吧。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Developer/CoreSimulator/Profiles/Runtimes</div></pre></td></tr></table></figure>
+<h4 id="移除-playground-的项目缓存-XCPGDevices"><a href="#移除-playground-的项目缓存-XCPGDevices" class="headerlink" title="移除 playground 的项目缓存(XCPGDevices)"></a>移除 playground 的项目缓存(XCPGDevices)</h4><p>删除后可重新生成，可以全部删除。再次运行程序会缓存。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Developer/XCPGDevices</div></pre></td></tr></table></figure>
+<h4 id="移除旧的文档-Docsets"><a href="#移除旧的文档-Docsets" class="headerlink" title="移除旧的文档(Docsets)"></a>移除旧的文档(Docsets)</h4><p>删除后不可恢复，该目录下存储的为开发文档，一般有三个文件com.apple.adc.documentation.iOS.docset(1.68GB)、com.apple.adc.documentation.OSX.docset(2.62GB)和com.apple.adc.documentation.Xcode.docset(256.4M)，如果你只做iOS开发，其实你可以把OSX.docset删除掉的，因为它占用了2.62GB的内存。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Developer/Shared/Documentation/DocSets</div></pre></td></tr></table></figure>
+<h4 id="移除模拟器中的SDK版本-iPhoneSimulator-sdk"><a href="#移除模拟器中的SDK版本-iPhoneSimulator-sdk" class="headerlink" title="移除模拟器中的SDK版本(iPhoneSimulator.sdk)"></a>移除模拟器中的SDK版本(iPhoneSimulator.sdk)</h4><p>不可恢复，操作请慎重。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/application/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -452,7 +457,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/php/" rel="tag"># php</a>
+            <a href="/tags/Xcode/" rel="tag"># Xcode</a>
           
         </div>
       
@@ -465,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/linux-commands/" rel="next" title="常用Linux命令">
-                <i class="fa fa-chevron-left"></i> 常用Linux命令
+              <a href="/2018/04/swift-basic-for-loop/" rel="next" title="Swift基础之：for 循环">
+                <i class="fa fa-chevron-left"></i> Swift基础之：for 循环
               </a>
             
           </div>
@@ -474,10 +479,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/Third-party-libraries/" rel="prev" title="整理用到的一些第三方开源库">
-                整理用到的一些第三方开源库 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -536,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -666,6 +676,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#移除运行安装-APP-产生的缓存文件-DerivedData"><span class="nav-number">1.</span> <span class="nav-text">移除运行安装 APP 产生的缓存文件(DerivedData)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除-APP-打包的ipa历史版本-Archives"><span class="nav-number">2.</span> <span class="nav-text">移除 APP 打包的ipa历史版本(Archives)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除-APP-打包的app-icon历史版本-Archives"><span class="nav-number">3.</span> <span class="nav-text">移除 APP 打包的app icon历史版本(Archives)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除模拟器的缓存数据-Devices"><span class="nav-number">4.</span> <span class="nav-text">移除模拟器的缓存数据(Devices)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除对旧设备的支持-iOS-DeviceSupport"><span class="nav-number">5.</span> <span class="nav-text">移除对旧设备的支持(iOS DeviceSupport)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除旧版本的模拟器支持"><span class="nav-number">6.</span> <span class="nav-text">移除旧版本的模拟器支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除-playground-的项目缓存-XCPGDevices"><span class="nav-number">7.</span> <span class="nav-text">移除 playground 的项目缓存(XCPGDevices)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除旧的文档-Docsets"><span class="nav-number">8.</span> <span class="nav-text">移除旧的文档(Docsets)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除模拟器中的SDK版本-iPhoneSimulator-sdk"><span class="nav-number">9.</span> <span class="nav-text">移除模拟器中的SDK版本(iPhoneSimulator.sdk)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -840,9 +866,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://littleylv.github.io/2016/08/phpexcel-out-of-memory/';
-        this.page.identifier = '2016/08/phpexcel-out-of-memory/';
-        this.page.title = 'PHPExcel Out Of Memory';
+        this.page.url = 'https://littleylv.github.io/2018/04/clean-xcode-cache/';
+        this.page.identifier = '2018/04/clean-xcode-cache/';
+        this.page.title = '清理 Xcode 缓存';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

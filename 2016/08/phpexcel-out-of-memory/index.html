@@ -2,6 +2,9 @@
 
 
 
+
+
+
   
 
 
@@ -9,7 +12,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
 
@@ -49,19 +52,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.2.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
 
 
 
@@ -76,7 +79,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.0.3',
+    version: '6.2.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -99,11 +102,7 @@
 
 
 
-  
-  <meta name="keywords" content="php," />
-
-
-<meta name="description" content="前些时候在利用PHPExcel生成excel文件的时候出了点问题，特此记录。">
+  <meta name="description" content="前些时候在利用PHPExcel生成excel文件的时候出了点问题，特此记录。">
 <meta name="keywords" content="php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHPExcel Out Of Memory">
@@ -130,6 +129,7 @@
     sidebar: "",
   };
 </script>
+
   <title>PHPExcel Out Of Memory | 十月初壹</title>
   
 
@@ -191,12 +191,12 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">十月初壹</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +208,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -216,62 +216,82 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-collections">
-          <a href="/collections/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-star"></i> <br />收藏</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-collections">
+    <a href="/collections/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-star"></i> <br />收藏</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
@@ -280,6 +300,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -318,11 +339,19 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PHPExcel Out Of Memory</h1>
+          <h1 class="post-title" itemprop="name headline">PHPExcel Out Of Memory
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -330,28 +359,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-05T00:00:00+08:00">2016-08-05</time>
-            
 
-            
-            
               
                 
               
+
+              <time title="创建时间：2016-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2016-08-05T00:00:00+08:00">2016-08-05</time>
             
 
             
               
-              <span class="post-meta-divider">|</span>
-              
 
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
               
-                <span class="post-meta-item-text">更新于&#58;</span>
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-10 16:10:52" itemprop="dateModified" datetime="2017-07-10T16:10:52+08:00">2017-07-10</time>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T16:10:52+08:00">2017-07-10</time>
             
           </span>
 
@@ -387,7 +418,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -414,7 +445,7 @@
       
         <p>前些时候在利用PHPExcel生成excel文件的时候出了点问题，特此记录。<br><a id="more"></a></p>
 <p>功能不复杂，就是从数据库取出资料，写进模板的xlsx文件里，最后输出文件流给浏览器下载：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$objPHPExcel = \PHPExcel_IOFactory::load(<span class="string">'foo.xlsx'</span>);</div><div class="line">$objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);</div><div class="line">$num = <span class="number">2</span>;</div><div class="line"><span class="keyword">foreach</span>($query <span class="keyword">as</span> $item)&#123;</div><div class="line">	$objPHPExcel-&gt;getActiveSheet()</div><div class="line">		-&gt;setCellValue(<span class="string">'A'</span>.$num, <span class="string">'somethingA'</span>)</div><div class="line">		-&gt;setCellValue(<span class="string">'B'</span>.$num, <span class="string">'somethingB'</span>)</div><div class="line">		<span class="comment">//.....       </span></div><div class="line">		-&gt;setCellValue(<span class="string">'Z'</span>.$num, <span class="string">'somethingZ'</span>);</div><div class="line">	$num++;</div><div class="line">&#125;</div><div class="line">$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, <span class="string">'Excel2007'</span>);</div><div class="line">$objWriter-&gt;save(<span class="string">'php://output'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$objPHPExcel = \PHPExcel_IOFactory::load(<span class="string">'foo.xlsx'</span>);</span><br><span class="line">$objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);</span><br><span class="line">$num = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">foreach</span>($query <span class="keyword">as</span> $item)&#123;</span><br><span class="line">	$objPHPExcel-&gt;getActiveSheet()</span><br><span class="line">		-&gt;setCellValue(<span class="string">'A'</span>.$num, <span class="string">'somethingA'</span>)</span><br><span class="line">		-&gt;setCellValue(<span class="string">'B'</span>.$num, <span class="string">'somethingB'</span>)</span><br><span class="line">		<span class="comment">//.....       </span></span><br><span class="line">		-&gt;setCellValue(<span class="string">'Z'</span>.$num, <span class="string">'somethingZ'</span>);</span><br><span class="line">	$num++;</span><br><span class="line">&#125;</span><br><span class="line">$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, <span class="string">'Excel2007'</span>);</span><br><span class="line">$objWriter-&gt;save(<span class="string">'php://output'</span>);</span><br></pre></td></tr></table></figure>
 <p>本地开发的时候是没有问题的。当到正式环境的时候，由于数据量大了，竟然报错了，超内存了：</p>
 <pre><code>Fatal error: Allowed memory size of XXXX bytes exhausted (tried to allocate XXXX bytes) in XXX
 </code></pre><p>网上搜索了一下解决办法，找到这个地方：<a href="http://stackoverflow.com/questions/4817651/phpexcel-runs-out-of-256-512-and-also-1024mb-of-ram" target="_blank" rel="noopener">php - PHPExcel runs out of 256, 512 and also 1024MB of RAM - Stack Overflow</a>。根据回答里的说法，好像是phpexcel存在的问题：</p>
@@ -426,13 +457,16 @@
 <p>要占用这么多的内存啊！也有人说修改<code>ini_set(&#39;memory_limit&#39;, 0);</code>，可是这太不靠谱了，万一内存爆了。</p>
 <p>万幸，有人提到了另一个在内存处理方面更加强大的工具：box/spout<br>，这是他的github主页：<a href="https://github.com/box/spout" target="_blank" rel="noopener">box/spout: Read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way</a>。按照项目的简介：<code>Spout is a PHP library to read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way. Contrary to other file readers or writers, it is capable of processing very large files while keeping the memory usage really low (less than 3MB).</code>。感觉很不错的样子，完全可以控制内存在正常范围内！</p>
 <p>composer了他的项目后，修改我的代码如下：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Box</span>\<span class="title">Spout</span>\<span class="title">Writer</span>\<span class="title">WriterFactory</span> <span class="title">as</span> <span class="title">SpoutWriterFactory</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Box</span>\<span class="title">Spout</span>\<span class="title">Common</span>\<span class="title">Type</span> <span class="title">as</span> <span class="title">SpoutType</span>;</div><div class="line">	</div><div class="line">$writer = SpoutWriterFactory::create(SpoutType::XLSX);</div><div class="line">$writer-&gt;openToBrowser(<span class="string">'bar.xlsx'</span>);</div><div class="line"><span class="keyword">foreach</span>($query <span class="keyword">as</span> $item)&#123;</div><div class="line">	$row = [</div><div class="line">		<span class="string">'somethingA'</span>,</div><div class="line">		<span class="string">'somethingB'</span>,</div><div class="line">		<span class="comment">//......</span></div><div class="line">		<span class="string">'somethingZ'</span></div><div class="line">	];</div><div class="line">	$writer-&gt;addRow($row);</div><div class="line">&#125;</div><div class="line">$writer-&gt;close();</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">Box</span>\<span class="title">Spout</span>\<span class="title">Writer</span>\<span class="title">WriterFactory</span> <span class="title">as</span> <span class="title">SpoutWriterFactory</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Box</span>\<span class="title">Spout</span>\<span class="title">Common</span>\<span class="title">Type</span> <span class="title">as</span> <span class="title">SpoutType</span>;</span><br><span class="line">	</span><br><span class="line">$writer = SpoutWriterFactory::create(SpoutType::XLSX);</span><br><span class="line">$writer-&gt;openToBrowser(<span class="string">'bar.xlsx'</span>);</span><br><span class="line"><span class="keyword">foreach</span>($query <span class="keyword">as</span> $item)&#123;</span><br><span class="line">	$row = [</span><br><span class="line">		<span class="string">'somethingA'</span>,</span><br><span class="line">		<span class="string">'somethingB'</span>,</span><br><span class="line">		<span class="comment">//......</span></span><br><span class="line">		<span class="string">'somethingZ'</span></span><br><span class="line">	];</span><br><span class="line">	$writer-&gt;addRow($row);</span><br><span class="line">&#125;</span><br><span class="line">$writer-&gt;close();</span><br></pre></td></tr></table></figure>
 <p>经测试，在同样数据量的情况下，spout完全没有内存方面的压力，而且速度相比PHPExcel更快。 :)</p>
 <p>当然，spout在表格渲染上也有一些小缺陷，比如目前我需要用到的单元格合并就没法做到；另外由于处理方式的不同，无法直接针对模板文件read进来改写，只能经过reader拷贝row进来放到writer文件。但是相对内存方面的大问题，这种可以忽略了嘿嘿。</p>
 <p>完。</p>
 
       
     </div>
+
+    
+
     
     
     
@@ -551,7 +585,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -676,7 +710,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">LittleyLv</span>
@@ -689,7 +723,7 @@
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -697,7 +731,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.2.0</div>
 
 
 
@@ -707,21 +741,20 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv">
+    <span class="site-uv" title="总访客量">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
     </span>
   
 
   
-    <span class="site-pv">
+    <span class="site-pv" title="总访问量">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
     </span>
   
 </div>
+
 
 
 
@@ -806,25 +839,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
 
 
 
@@ -940,35 +973,24 @@
             var counter = results[0];
             counter.fetchWhenSave(true);
             counter.increment("time");
+            
             counter.save(null, {
               success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
               }
             });
           } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
           }
         },
         error: function(error) {
@@ -1005,6 +1027,66 @@
   
 
   
+
+  
+  <style>
+      .copy-btn {
+          display: inline-block;
+          padding: 6px 12px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+          color: #333;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          background-color: #eee;
+          background-image: linear-gradient(#fcfcfc, #eee);
+          border: 1px solid #d5d5d5;
+          border-radius: 3px;
+          user-select: none;
+      }
+
+      .highlight-wrap .copy-btn {
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+          padding: 2px 6px;
+          position: absolute;
+          right: 4px;
+          top: 8px;
+      }
+
+      .highlight-wrap:hover .copy-btn,
+      .highlight-wrap .copy-btn:focus {
+          opacity: 1
+      }
+
+      .highlight-wrap {
+          position: relative;
+      }
+  </style>
+  <script>
+      $('.highlight').each(function(i, e) {
+          var $wrap = $('<div>').addClass('highlight-wrap')
+          $(e).after($wrap)
+          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
+                  return $(e).text()
+              }).toArray().join('\n')
+              var ta = document.createElement('textarea')
+              document.body.appendChild(ta)
+              ta.style.position = 'fixed'
+              ta.style.top = 0
+              ta.style.left = 0
+              ta.value = code
+              ta.select()
+              ta.focus()
+              document.execCommand('copy')
+              document.body.removeChild(ta)
+          })).append(e)
+      })
+  </script>
+
 
 </body>
 </html>

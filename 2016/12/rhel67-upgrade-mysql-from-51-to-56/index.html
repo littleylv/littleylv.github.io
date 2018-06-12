@@ -2,6 +2,9 @@
 
 
 
+
+
+
   
 
 
@@ -9,7 +12,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
 
@@ -49,19 +52,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.2.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
 
 
 
@@ -76,7 +79,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.0.3',
+    version: '6.2.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -99,11 +102,7 @@
 
 
 
-  
-  <meta name="keywords" content="Mysql," />
-
-
-<meta name="description" content="CentOS 6.7 中把Mysql从 5.1 升级到 5.6 的步骤及遇到的问题和解决方案。">
+  <meta name="description" content="CentOS 6.7 中把Mysql从 5.1 升级到 5.6 的步骤及遇到的问题和解决方案。">
 <meta name="keywords" content="Mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 6.7 中把Mysql从 5.1 升级到 5.6">
@@ -130,6 +129,7 @@
     sidebar: "",
   };
 </script>
+
   <title>CentOS 6.7 中把Mysql从 5.1 升级到 5.6 | 十月初壹</title>
   
 
@@ -191,12 +191,12 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">十月初壹</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +208,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -216,62 +216,82 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-collections">
-          <a href="/collections/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-star"></i> <br />收藏</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-collections">
+    <a href="/collections/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-star"></i> <br />收藏</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
@@ -280,6 +300,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -318,11 +339,19 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CentOS 6.7 中把Mysql从 5.1 升级到 5.6</h1>
+          <h1 class="post-title" itemprop="name headline">CentOS 6.7 中把Mysql从 5.1 升级到 5.6
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -330,28 +359,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-21T09:27:17+08:00">2016-12-21</time>
-            
 
-            
-            
               
                 
               
+
+              <time title="创建时间：2016-12-21 09:27:17" itemprop="dateCreated datePublished" datetime="2016-12-21T09:27:17+08:00">2016-12-21</time>
             
 
             
               
-              <span class="post-meta-divider">|</span>
-              
 
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
               
-                <span class="post-meta-item-text">更新于&#58;</span>
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-10 16:48:54" itemprop="dateModified" datetime="2017-07-10T16:48:54+08:00">2017-07-10</time>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T16:48:54+08:00">2017-07-10</time>
             
           </span>
 
@@ -387,7 +418,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -417,34 +448,34 @@
         <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>本地测试环境一台Linux服务器中初始安装的Mysql版本是5.1，为什么这么老呢？因为最早安装服务器的时候，我是一路默认yum过来的，而早起版本的系统自带的yum资源非常老，比如Mysql是5.1，php是5.3（已经被我升级到5.5了）。所以决定把Mysql升级一下，原因之一是新的版本能得到性能的提升，之二，可以用到更多新版的特性（比如uft8mb4字符）。</p>
 <p>这里考虑的是5.6，虽然目前最新是5.7（甚至8.0，正式版未发布），但5.6版本使用的人最多，而且如果强行从5.1到5.7，跨度太大，怕会对目前数据产生不可预估的问题，保险起见，选择了5.6最为升级版本。</p>
 <h2 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h2><p>1、先确认系统版本</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># <span class="selector-tag">uname</span> <span class="selector-tag">-r</span></div><div class="line">2<span class="selector-class">.6</span><span class="selector-class">.32-573</span><span class="selector-class">.7</span><span class="selector-class">.1</span><span class="selector-class">.el6</span><span class="selector-class">.x86_64</span></div><div class="line"># <span class="selector-tag">lsb_release</span> <span class="selector-tag">-r</span></div><div class="line"><span class="selector-tag">Release</span>:	6<span class="selector-class">.7</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="selector-tag">uname</span> <span class="selector-tag">-r</span></span><br><span class="line">2<span class="selector-class">.6</span><span class="selector-class">.32-573</span><span class="selector-class">.7</span><span class="selector-class">.1</span><span class="selector-class">.el6</span><span class="selector-class">.x86_64</span></span><br><span class="line"># <span class="selector-tag">lsb_release</span> <span class="selector-tag">-r</span></span><br><span class="line"><span class="selector-tag">Release</span>:	6<span class="selector-class">.7</span></span><br></pre></td></tr></table></figure>
 <p>2、下载对应版本的yum资源仓库</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># rpm -Uvh http:<span class="comment">//dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># rpm -Uvh http:<span class="comment">//dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm</span></span></span><br></pre></td></tr></table></figure>
 <p>3、编辑仓库，设置5.6的enabled=1（默认是5.7的enabled=1），这样yum升级的时候才会选择5.6升级。</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># vim /etc/yum.repos.d/mysql-community.repo</span></div><div class="line"></div><div class="line">[mysql56-community]</div><div class="line"><span class="attribute">name</span>=MySQL 5.6<span class="built_in"> Community Server</span></div><div class="line"><span class="attribute">baseurl</span>=http://repo.mysql.com/yum/mysql-5.6-community/el/6/$basearch/</div><div class="line"><span class="attribute">enabled</span>=1 # 从0改成1</div><div class="line"><span class="attribute">gpgcheck</span>=1</div><div class="line"><span class="attribute">gpgkey</span>=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</div><div class="line"></div><div class="line">[mysql57-community]</div><div class="line"><span class="attribute">name</span>=MySQL 5.7<span class="built_in"> Community Server</span></div><div class="line"><span class="attribute">baseurl</span>=http://repo.mysql.com/yum/mysql-5.7-community/el/6/$basearch/</div><div class="line"><span class="attribute">enabled</span>=0 # 从1改成0</div><div class="line"><span class="attribute">gpgcheck</span>=1</div><div class="line"><span class="attribute">gpgkey</span>=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/yum.repos.d/mysql-community.repo</span></span><br><span class="line"></span><br><span class="line">[mysql56-community]</span><br><span class="line"><span class="attribute">name</span>=MySQL 5.6<span class="built_in"> Community </span>Server</span><br><span class="line"><span class="attribute">baseurl</span>=http://repo.mysql.com/yum/mysql-5.6-community/el/6/$basearch/</span><br><span class="line"><span class="attribute">enabled</span>=1 # 从0改成1</span><br><span class="line"><span class="attribute">gpgcheck</span>=1</span><br><span class="line"><span class="attribute">gpgkey</span>=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br><span class="line"></span><br><span class="line">[mysql57-community]</span><br><span class="line"><span class="attribute">name</span>=MySQL 5.7<span class="built_in"> Community </span>Server</span><br><span class="line"><span class="attribute">baseurl</span>=http://repo.mysql.com/yum/mysql-5.7-community/el/6/$basearch/</span><br><span class="line"><span class="attribute">enabled</span>=0 # 从1改成0</span><br><span class="line"><span class="attribute">gpgcheck</span>=1</span><br><span class="line"><span class="attribute">gpgkey</span>=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br></pre></td></tr></table></figure>
 <p>4、保险起见，备份数据库</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># <span class="selector-tag">vim</span> <span class="selector-tag">bak</span><span class="selector-class">.sh</span></div><div class="line"></div><div class="line"><span class="selector-tag">mysqldump</span> <span class="selector-tag">-uroot</span> <span class="selector-tag">-pxxx</span> <span class="selector-tag">db1</span> &gt; <span class="selector-tag">db1</span><span class="selector-class">.sql</span></div><div class="line"><span class="selector-tag">mysqldump</span> <span class="selector-tag">-uroot</span> <span class="selector-tag">-pxxx</span> <span class="selector-tag">db2</span> &gt; <span class="selector-tag">db2</span><span class="selector-class">.sql</span></div><div class="line">...</div><div class="line"></div><div class="line"># <span class="selector-tag">sh</span> <span class="selector-tag">bak</span><span class="selector-class">.sh</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># <span class="selector-tag">vim</span> <span class="selector-tag">bak</span><span class="selector-class">.sh</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">mysqldump</span> <span class="selector-tag">-uroot</span> <span class="selector-tag">-pxxx</span> <span class="selector-tag">db1</span> &gt; <span class="selector-tag">db1</span><span class="selector-class">.sql</span></span><br><span class="line"><span class="selector-tag">mysqldump</span> <span class="selector-tag">-uroot</span> <span class="selector-tag">-pxxx</span> <span class="selector-tag">db2</span> &gt; <span class="selector-tag">db2</span><span class="selector-class">.sql</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"># <span class="selector-tag">sh</span> <span class="selector-tag">bak</span><span class="selector-class">.sh</span></span><br></pre></td></tr></table></figure>
 <p>5、开始升级Mysql。执行以下命令就可以，会同时自动升级其他的如mysql-devel、mysql-client等。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> yum update mysql-server</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum update mysql-server</span></span><br></pre></td></tr></table></figure>
 <p><code>注：由于本地网络从mysql官网下载较慢，可以在其他系统下翻墙或借助下载工具下载对应的包如 http://repo.mysql.com/yum/mysql-5.6-community/el/6/x86_64/mysql-community-server-5.6.35-2.el6.x86_64.rpm 再上传到服务器的目录 /var/cache/yum/x86_64/6/mysql56-community/packages/ 里，再执行 yum update mysql-server 会自动认为下载完成而跳过下载步骤。</code></p>
 <p>6、安装完毕后，默认会自动重启Mysql服务，如果没有重启，手动重启或启动。查看版本号，已经是新版。</p>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># service mysqld start</span></div><div class="line">OR</div><div class="line"><span class="meta"># service mysqld restart</span></div><div class="line"></div><div class="line"><span class="meta"># mysql -V</span></div><div class="line">mysql  Ver <span class="number">14.14</span> Distrib <span class="number">5.6</span><span class="number">.35</span>, <span class="keyword">for</span> Linux (x86_64) <span class="keyword">using</span>  EditLine wrapper</div></pre></td></tr></table></figure>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># service mysqld start</span></span><br><span class="line">OR</span><br><span class="line"><span class="meta"># service mysqld restart</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># mysql -V</span></span><br><span class="line">mysql  Ver <span class="number">14.14</span> Distrib <span class="number">5.6</span><span class="number">.35</span>, <span class="keyword">for</span> Linux (x86_64) <span class="keyword">using</span>  EditLine wrapper</span><br></pre></td></tr></table></figure>
 <p>7、最重要的一步，而且不能忽略的一步：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> mysql_upgrade -uroot -pxxx</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mysql_upgrade -uroot -pxxx</span></span><br></pre></td></tr></table></figure>
 <p><code>官方文档：Once the server restarts, run mysql_upgrade to check and possibly resolve any incompatibilities between the old data and the upgraded software. mysql_upgrade also performs other functions; see [mysql_upgrade — Check and Upgrade MySQL Tables](http://dev.mysql.com/doc/refman/5.7/en/mysql-upgrade.html) details.</code></p>
 <p>至此，Mysql 5.6 已经升级完毕。</p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>那么问题来了。</p>
 <p>我有个项目，某一张表需要用到utf8mb4字符编码，我更改了数据库表字段的CHARACTER和COLLATE，修改了项目的数据库连接默认encoding：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql&gt; ALTER TABLE tb1 CHANGE col1 col1 VARCHAR(<span class="number">127</span>) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</div><div class="line"></div><div class="line"># vim config/app.php</div><div class="line">...</div><div class="line">	<span class="string">'encoding'</span> =&gt; <span class="string">'utf8mb4'</span>,</div><div class="line">...</div></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE tb1 CHANGE col1 col1 VARCHAR(<span class="number">127</span>) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br><span class="line"></span><br><span class="line"># vim config/app.php</span><br><span class="line">...</span><br><span class="line">	<span class="string">'encoding'</span> =&gt; <span class="string">'utf8mb4'</span>,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>完毕后程序报错了：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql: Character <span class="keyword">set</span> 'utf8mb4' <span class="keyword">is</span> <span class="keyword">not</span> a compiled <span class="built_in">character</span> <span class="keyword">set</span> <span class="keyword">and</span> <span class="keyword">is</span> <span class="keyword">not</span> specified <span class="keyword">in</span> <span class="keyword">the</span> '/usr/share/mysql/charsets/Index.xml' <span class="built_in">file</span> </div><div class="line"></div><div class="line">PDOException: SQLSTATE[HY000] [<span class="number">2019</span>] Can't initialize <span class="built_in">character</span> <span class="keyword">set</span> utf8mb4 (path: /usr/share/mysql/charsets/) <span class="keyword">in</span> /xxx.php <span class="keyword">on</span> line oo</div></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql: Character <span class="keyword">set</span> 'utf8mb4' <span class="keyword">is</span> <span class="keyword">not</span> a compiled <span class="built_in">character</span> <span class="keyword">set</span> <span class="keyword">and</span> <span class="keyword">is</span> <span class="keyword">not</span> specified <span class="keyword">in</span> <span class="keyword">the</span> '/usr/share/mysql/charsets/Index.xml' <span class="built_in">file</span> </span><br><span class="line"></span><br><span class="line">PDOException: SQLSTATE[HY000] [<span class="number">2019</span>] Can't initialize <span class="built_in">character</span> <span class="keyword">set</span> utf8mb4 (path: /usr/share/mysql/charsets/) <span class="keyword">in</span> /xxx.php <span class="keyword">on</span> line oo</span><br></pre></td></tr></table></figure>
 <p>说好的5.5以后就支持utf8mb4了呢，现在怎么说utf8mb4不存在呢！？无奈，网上搜索结果包括什么 <code>把/usr/share/mysql/charsets/Index.xml配置里的utf8直接改为utf8mb4</code> 等做法完全无效。另外我这个数据库里包含了好几个库，不能全部设置 <code>/etc/my.cnf</code> 里的默认字符，应该要兼容才对。</p>
 <p>后来找到了这个 <a href="https://dev.mysql.com/doc/refman/5.6/en/adding-character-set.html" target="_blank" rel="noopener">MySQL 5.6 Reference Manual  /  Globalization  /  Adding a Character Set</a>，按照他的步骤添加 utf8mb4 (而不是修改或直接拷贝修改utf8）到 <code>/usr/share/mysql/charsets/Index.xml</code>。</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT <span class="symbol">*</span> FROM INFORMATION_SCHEMA.COLLATIONS WHERE CHARACTER_SET_NAME='utf8mb4';</div><div class="line">+------------------------+--------------------+-----+------------+-------------+---------+</div><div class="line">|<span class="string"> COLLATION_NAME         </span>|<span class="string"> CHARACTER_SET_NAME </span>|<span class="string"> ID  </span>|<span class="string"> IS_DEFAULT </span>|<span class="string"> IS_COMPILED </span>|<span class="string"> SORTLEN </span>|</div><div class="line">+------------------------+--------------------+-----+------------+-------------+---------+</div><div class="line">|<span class="string"> utf8mb4_general_ci     </span>|<span class="string"> utf8mb4            </span>|<span class="string">  45 </span>|<span class="string"> Yes        </span>|<span class="string"> Yes         </span>|<span class="string">       1 </span>|</div><div class="line">|<span class="string"> utf8mb4_bin            </span>|<span class="string"> utf8mb4            </span>|<span class="string">  46 </span>|<span class="string">            </span>|<span class="string"> Yes         </span>|<span class="string">       1 </span>|</div><div class="line">|<span class="string"> utf8mb4_unicode_ci     </span>|<span class="string"> utf8mb4            </span>|<span class="string"> 224 </span>|<span class="string">            </span>|<span class="string"> Yes         </span>|<span class="string">       8 </span>|</div><div class="line">...</div><div class="line">+------------------------+--------------------+-----+------------+-------------+---------+</div><div class="line">26 rows in set (0.00 sec)</div><div class="line"></div><div class="line"><span class="comment"># vim /usr/share/mysql/charsets/Index.xml</span></div><div class="line"><span class="variable">&lt;!-- 添加到utf8之前 --&gt;</span></div><div class="line"><span class="variable">&lt;!-- 下面2个id分别为上面mysql查到的id --&gt;</span></div><div class="line"><span class="variable">&lt;charset name="utf8mb4"&gt;</span></div><div class="line">  <span class="variable">&lt;family&gt;</span>Unicode<span class="variable">&lt;/family&gt;</span></div><div class="line">  <span class="variable">&lt;description&gt;</span>UTF-8 Unicode<span class="variable">&lt;/description&gt;</span></div><div class="line">  <span class="variable">&lt;collation name="utf8mb4_general_ci" id="45"&gt;</span></div><div class="line">   <span class="variable">&lt;flag&gt;</span>primary<span class="variable">&lt;/flag&gt;</span></div><div class="line">   <span class="variable">&lt;flag&gt;</span>compiled<span class="variable">&lt;/flag&gt;</span></div><div class="line">  <span class="variable">&lt;/collation&gt;</span></div><div class="line">  <span class="variable">&lt;collation name="utf8mb4_bin"        id="46"&gt;</span></div><div class="line">    <span class="variable">&lt;flag&gt;</span>binary<span class="variable">&lt;/flag&gt;</span></div><div class="line">    <span class="variable">&lt;flag&gt;</span>compiled<span class="variable">&lt;/flag&gt;</span></div><div class="line">  <span class="variable">&lt;/collation&gt;</span></div><div class="line"><span class="variable">&lt;/charset&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT <span class="symbol">*</span> FROM INFORMATION_SCHEMA.COLLATIONS WHERE CHARACTER_SET_NAME='utf8mb4';</span><br><span class="line">+------------------------+--------------------+-----+------------+-------------+---------+</span><br><span class="line">|<span class="string"> COLLATION_NAME         </span>|<span class="string"> CHARACTER_SET_NAME </span>|<span class="string"> ID  </span>|<span class="string"> IS_DEFAULT </span>|<span class="string"> IS_COMPILED </span>|<span class="string"> SORTLEN </span>|</span><br><span class="line">+------------------------+--------------------+-----+------------+-------------+---------+</span><br><span class="line">|<span class="string"> utf8mb4_general_ci     </span>|<span class="string"> utf8mb4            </span>|<span class="string">  45 </span>|<span class="string"> Yes        </span>|<span class="string"> Yes         </span>|<span class="string">       1 </span>|</span><br><span class="line">|<span class="string"> utf8mb4_bin            </span>|<span class="string"> utf8mb4            </span>|<span class="string">  46 </span>|<span class="string">            </span>|<span class="string"> Yes         </span>|<span class="string">       1 </span>|</span><br><span class="line">|<span class="string"> utf8mb4_unicode_ci     </span>|<span class="string"> utf8mb4            </span>|<span class="string"> 224 </span>|<span class="string">            </span>|<span class="string"> Yes         </span>|<span class="string">       8 </span>|</span><br><span class="line">...</span><br><span class="line">+------------------------+--------------------+-----+------------+-------------+---------+</span><br><span class="line">26 rows in set (0.00 sec)</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /usr/share/mysql/charsets/Index.xml</span></span><br><span class="line"><span class="variable">&lt;!-- 添加到utf8之前 --&gt;</span></span><br><span class="line"><span class="variable">&lt;!-- 下面2个id分别为上面mysql查到的id --&gt;</span></span><br><span class="line"><span class="variable">&lt;charset name="utf8mb4"&gt;</span></span><br><span class="line">  <span class="variable">&lt;family&gt;</span>Unicode<span class="variable">&lt;/family&gt;</span></span><br><span class="line">  <span class="variable">&lt;description&gt;</span>UTF-8 Unicode<span class="variable">&lt;/description&gt;</span></span><br><span class="line">  <span class="variable">&lt;collation name="utf8mb4_general_ci" id="45"&gt;</span></span><br><span class="line">   <span class="variable">&lt;flag&gt;</span>primary<span class="variable">&lt;/flag&gt;</span></span><br><span class="line">   <span class="variable">&lt;flag&gt;</span>compiled<span class="variable">&lt;/flag&gt;</span></span><br><span class="line">  <span class="variable">&lt;/collation&gt;</span></span><br><span class="line">  <span class="variable">&lt;collation name="utf8mb4_bin"        id="46"&gt;</span></span><br><span class="line">    <span class="variable">&lt;flag&gt;</span>binary<span class="variable">&lt;/flag&gt;</span></span><br><span class="line">    <span class="variable">&lt;flag&gt;</span>compiled<span class="variable">&lt;/flag&gt;</span></span><br><span class="line">  <span class="variable">&lt;/collation&gt;</span></span><br><span class="line"><span class="variable">&lt;/charset&gt;</span></span><br></pre></td></tr></table></figure>
 <p>但是仍然还是报那个错。感觉Mysql方面的设置已经是没有问题了的，那么会不会是PHP方面的问题呢？PDO？</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> yum reinstall perl-DBD-MySQL php55w-pdo php55w-odbc php55w-mysqlnd php55w-mysql php55w-dba</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum reinstall perl-DBD-MySQL php55w-pdo php55w-odbc php55w-mysqlnd php55w-mysql php55w-dba</span></span><br></pre></td></tr></table></figure>
 <p>仍然报错！最后，在折腾了近2小时后，找到了最后的解决办法：<a href="http://stackoverflow.com/questions/33834191/php-pdoexception-sqlstatehy000-2019-cant-initialize-character-set-utf8mb4" target="_blank" rel="noopener">PHP PDOException: SQLSTATE[HY000] [2019] Can’t initialize character set utf8mb4</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> yum erase php55w-mysql</span></div><div class="line"><span class="meta">#</span><span class="bash"> yum install php55w-mysqlnd</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum erase php55w-mysql</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> yum install php55w-mysqlnd</span></span><br></pre></td></tr></table></figure>
 <p>卸载mysql连接扩展，安装mysqlnd PDO_MySQL 扩展，成功解决。</p>
 <p>另外 <code>/usr/share/mysql/charsets/Index.xml</code> 里我添加的utf8mb4的配置并没有删除（虽然一开始加了并没有解决问题，但并不排除这个也是问题之一），在安装 <code>php55w-mysqlnd</code> 解决了问题后并没有验证去掉utf8mb4之后会不会有问题。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
@@ -461,6 +492,9 @@
 
       
     </div>
+
+    
+
     
     
     
@@ -588,7 +622,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -729,7 +763,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">LittleyLv</span>
@@ -742,7 +776,7 @@
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -750,7 +784,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.2.0</div>
 
 
 
@@ -760,21 +794,20 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv">
+    <span class="site-uv" title="总访客量">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
     </span>
   
 
   
-    <span class="site-pv">
+    <span class="site-pv" title="总访问量">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
     </span>
   
 </div>
+
 
 
 
@@ -859,25 +892,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
 
 
 
@@ -993,35 +1026,24 @@
             var counter = results[0];
             counter.fetchWhenSave(true);
             counter.increment("time");
+            
             counter.save(null, {
               success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
               }
             });
           } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
           }
         },
         error: function(error) {
@@ -1058,6 +1080,66 @@
   
 
   
+
+  
+  <style>
+      .copy-btn {
+          display: inline-block;
+          padding: 6px 12px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+          color: #333;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          background-color: #eee;
+          background-image: linear-gradient(#fcfcfc, #eee);
+          border: 1px solid #d5d5d5;
+          border-radius: 3px;
+          user-select: none;
+      }
+
+      .highlight-wrap .copy-btn {
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+          padding: 2px 6px;
+          position: absolute;
+          right: 4px;
+          top: 8px;
+      }
+
+      .highlight-wrap:hover .copy-btn,
+      .highlight-wrap .copy-btn:focus {
+          opacity: 1
+      }
+
+      .highlight-wrap {
+          position: relative;
+      }
+  </style>
+  <script>
+      $('.highlight').each(function(i, e) {
+          var $wrap = $('<div>').addClass('highlight-wrap')
+          $(e).after($wrap)
+          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
+                  return $(e).text()
+              }).toArray().join('\n')
+              var ta = document.createElement('textarea')
+              document.body.appendChild(ta)
+              ta.style.position = 'fixed'
+              ta.style.top = 0
+              ta.style.left = 0
+              ta.value = code
+              ta.select()
+              ta.focus()
+              document.execCommand('copy')
+              document.body.removeChild(ta)
+          })).append(e)
+      })
+  </script>
+
 
 </body>
 </html>

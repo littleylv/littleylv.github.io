@@ -4,109 +4,56 @@
 
 
 
-
-
-
-
-
-
-
-  
-
-
 <html class="theme-next mist use-motion" lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.3.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    save_scroll: false,
+    copycode: {"enable":true,"show_result":false,"style":null},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    pangu: false,
     algolia: {
       applicationID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     }
   };
 </script>
-
-
-  
-
-
-
 
   <meta name="description" content="对于习惯了Windows系统，初步接触Linux系统的人来说，从绝大部分操作只需要鼠标点点界面就能实现，到无桌面版的Linux（桌面版另当别论），操作只能是依赖命令来实现，可能会晕菜：命令如此之多！ 其实对于简单的系统维护来说，我们需要用的命令并不多，我们在需要用到的时候可以man或者-h一下，或者一些在线文档或者社区都能找到答案。在此整理记录一些常用的命令，方便自己和别人查看~">
 <meta name="keywords" content="Linux">
@@ -120,19 +67,17 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用Linux命令">
 <meta name="twitter:description" content="对于习惯了Windows系统，初步接触Linux系统的人来说，从绝大部分操作只需要鼠标点点界面就能实现，到无桌面版的Linux（桌面版另当别论），操作只能是依赖命令来实现，可能会晕菜：命令如此之多！ 其实对于简单的系统维护来说，我们需要用的命令并不多，我们在需要用到的时候可以man或者-h一下，或者一些在线文档或者社区都能找到答案。在此整理记录一些常用的命令，方便自己和别人查看~">
+  <link rel="canonical" href="https://littleylv.github.io/2016/08/linux-commands/">
 
 
-
-
-
-
-  <link rel="canonical" href="https://littleylv.github.io/2016/08/linux-commands/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
@@ -140,11 +85,7 @@
   
 
 
-
-
-
-
-  <script type="text/javascript">
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -157,30 +98,30 @@
 
 
 
+
+
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -188,18 +129,12 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+  <div class="site-meta">
 
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
@@ -208,7 +143,6 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
   </div>
 
   <div class="site-nav-toggle">
@@ -221,79 +155,80 @@
 </div>
 
 
-
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-collections">
-    <a href="/collections/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-star"></i> <br />收藏</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-
+  <ul id="menu" class="menu">
       
       
-    </ul>
-  
-
-  
+      
+        
+        <li class="menu-item menu-item-home">
+      
     
 
-  
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
-  
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-collections">
+      
+    
+
+    <a href="/collections/" rel="section"><i class="menu-item-icon fa fa-fw fa-star"></i> <br>收藏</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+  </ul>
+
+    
+
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
@@ -303,22 +238,12 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
-          <div id="content" class="content">
+          <div id="content" class="content page-post-detail">
             
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  
     <div class="reading-progress-bar"></div>
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -328,7 +253,7 @@
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2016/08/linux-commands/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LittleyLv">
+      <meta itemprop="name" content="Siuwing Leoi">
       <meta itemprop="description" content="十月初壹">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -336,70 +261,46 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="十月初壹">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">常用Linux命令
-              
+
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
               <time title="创建时间：2016-08-04 00:00:00" itemprop="dateCreated datePublished" datetime="2016-08-04T00:00:00+08:00">2016-08-04</time>
+            </span>
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2017-07-10 16:50:09" itemprop="dateModified" datetime="2017-07-10T16:50:09+08:00">2017-07-10</time>
-              
+              </span>
             
-          </span>
-
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/WORK/" itemprop="url" rel="index"><span itemprop="name">WORK</span></a></span>
 
@@ -410,42 +311,35 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/08/linux-commands/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2016/08/linux-commands/" itemprop="commentCount"></span>
-                </a>
+            <span id="/2016/08/linux-commands/" class="post-meta-item leancloud_visitors" data-flag-title="常用Linux命令" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
             
-          
-
-          
-          
-             <span id="/2016/08/linux-commands/" class="leancloud_visitors" data-flag-title="常用Linux命令">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/08/linux-commands/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/08/linux-commands/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
           
 
         </div>
       </header>
-    
 
     
     
@@ -453,16 +347,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <p>对于习惯了Windows系统，初步接触Linux系统的人来说，从绝大部分操作只需要鼠标点点界面就能实现，到无桌面版的Linux（桌面版另当别论），操作只能是依赖命令来实现，可能会晕菜：命令如此之多！</p>
-<p>其实对于简单的系统维护来说，我们需要用的命令并不多，我们在需要用到的时候可以<code>man</code>或者<code>-h</code>一下，或者一些在线文档或者社区都能找到答案。在此整理记录一些常用的命令，方便自己和别人查看~<br><a id="more"></a></p>
+<p>其实对于简单的系统维护来说，我们需要用的命令并不多，我们在需要用到的时候可以<code>man</code>或者<code>-h</code>一下，或者一些在线文档或者社区都能找到答案。在此整理记录一些常用的命令，方便自己和别人查看~</p>
+<a id="more"></a>
+
 <h5 id="1-cd"><a href="#1-cd" class="headerlink" title="1. cd"></a>1. cd</h5><p>cd应该是最最常用的命令了，它用来改变当前工作目录。<br>它的参数可以是绝对路径：</p>
-<pre><code>cd /usr/
-</code></pre><p>也可以是相对路径：</p>
-<pre><code>cd ./local/
-</code></pre><p>另外<code>cd</code>或<code>cd ~</code>可以直接切换到用户home目录。</p>
+<pre><code>cd /usr/</code></pre><p>也可以是相对路径：</p>
+<pre><code>cd ./local/</code></pre><p>另外<code>cd</code>或<code>cd ~</code>可以直接切换到用户home目录。</p>
 <h5 id="2-ls"><a href="#2-ls" class="headerlink" title="2. ls"></a>2. ls</h5><p>ls(LiSt directory contents)，如果参数是目录，则列出目录里的所有内容，如果参数是文件，则列出此文件。</p>
 <p>ls的-参数非常之多，可以使用<code>man ls</code>查看。这里罗列几个常用的参数：</p>
 <pre><code>ls // 无参数
@@ -480,50 +371,36 @@ drwx------@  5 YONG  staff   170B  8  4 10:20 Desktop
 
 ls -a    // 会显示隐藏文件
 -rw-------    1 YONG  staff  14574  8  4 10:56 .bash_history
--rw-r--r--    1 YONG  staff    330  5  4 17:49 .bash_profile
-</code></pre><p>很多参数都可以合并使用，比如<code>-la</code>。另外<code>ll</code>命令是<code>ls -l</code>的简化版，一般系统都有自带。如果没有的话，在<code>.bash_profile</code>加入<code>alias ll=&quot;ls -l&quot;</code>或<code>alias ll=&quot;ls -la&quot;</code>即可。</p>
+-rw-r--r--    1 YONG  staff    330  5  4 17:49 .bash_profile</code></pre><p>很多参数都可以合并使用，比如<code>-la</code>。另外<code>ll</code>命令是<code>ls -l</code>的简化版，一般系统都有自带。如果没有的话，在<code>.bash_profile</code>加入<code>alias ll=&quot;ls -l&quot;</code>或<code>alias ll=&quot;ls -la&quot;</code>即可。</p>
 <h5 id="3-pwd"><a href="#3-pwd" class="headerlink" title="3. pwd"></a>3. pwd</h5><p>pwd(Print Working Directory)用于显示当前工作目录的完整路径：</p>
 <pre><code>pwd
-/usr/local
-</code></pre><h5 id="4-cp"><a href="#4-cp" class="headerlink" title="4. cp"></a>4. cp</h5><p>cp(CoPy)即复制，可以复制一个文件为另一个文件，也可以复制多个文件到一个目录，或者复制整个目录及下面所有文件：</p>
+/usr/local</code></pre><h5 id="4-cp"><a href="#4-cp" class="headerlink" title="4. cp"></a>4. cp</h5><p>cp(CoPy)即复制，可以复制一个文件为另一个文件，也可以复制多个文件到一个目录，或者复制整个目录及下面所有文件：</p>
 <pre><code>cp fileA fileA2
 cp fileA fileB fileC DirecA
-cp -r DirecA DirecB
-</code></pre><p>cp同样接受多个-参数，其中<code>-r</code>对复制目录时使用，会递归复制目录下的所有文件和子目录。</p>
+cp -r DirecA DirecB</code></pre><p>cp同样接受多个-参数，其中<code>-r</code>对复制目录时使用，会递归复制目录下的所有文件和子目录。</p>
 <p>注1：cp等文件操作命令，源文件参数可以使用通配符，如需要复制A目录下的所有以a开头以php为后缀的文件到B目录，可以使用<code>cp A/a*.php B</code>。</p>
 <p>注2：在生产环境中轻易不要使用<code>-f</code>参数，我的理解f是force的意思，即这些操作都是强制性，并不会有任何警报信息或需要Y/N确认的步骤。然而有时候这种操作是致命的(特别是<code>rm -f</code>命令千万不要使用 - 相信你听过很多<code>cd / &amp;&amp; rm -rf</code>的段子)！</p>
 <h5 id="5-mv"><a href="#5-mv" class="headerlink" title="5. mv"></a>5. mv</h5><p>mv(MoVe)命令类似于cp，不同的是他不保留源文件，即移动(或重命名)。</p>
 <h5 id="6-rm"><a href="#6-rm" class="headerlink" title="6. rm"></a>6. rm</h5><p>rm(ReMove)用于删除文件或目录(删除目录时候使用<code>-r</code>执行递归删除)。</p>
 <h5 id="7-touch"><a href="#7-touch" class="headerlink" title="7. touch"></a>7. touch</h5><p>touch命令一般不会用到。他如果文件已经存在，他会更新文件的时间戳(访问时间、修改时间)，如果文件不存在，会常见一个新的空文件(注：带有<code>-c</code>参数例外)。</p>
-<pre><code>touch fileA
-</code></pre><h5 id="8-cat"><a href="#8-cat" class="headerlink" title="8. cat"></a>8. cat</h5><p>cat(conCATenate)连接过个文件并将其内容打印出来，就不用通过vim等方式打开文件查看就可以直接在终端查看文件内容：</p>
+<pre><code>touch fileA</code></pre><h5 id="8-cat"><a href="#8-cat" class="headerlink" title="8. cat"></a>8. cat</h5><p>cat(conCATenate)连接过个文件并将其内容打印出来，就不用通过vim等方式打开文件查看就可以直接在终端查看文件内容：</p>
 <pre><code>cat fileA
-cat fileA fileB
-</code></pre><p>一个好用的地方是：</p>
-<pre><code>cat fileA fileB &gt; fileC
-</code></pre><p>将不会往终端输出，而是把fileA和fileB的内容输出到fileC中，这在整合多个文件为一个文件时非常方便。</p>
+cat fileA fileB</code></pre><p>一个好用的地方是：</p>
+<pre><code>cat fileA fileB &gt; fileC</code></pre><p>将不会往终端输出，而是把fileA和fileB的内容输出到fileC中，这在整合多个文件为一个文件时非常方便。</p>
 <h5 id="9-mkdir"><a href="#9-mkdir" class="headerlink" title="9. mkdir"></a>9. mkdir</h5><p>mkdir(MaKe DIRectory)创建新目录，可以是相对路径也可以是绝对路径</p>
 <pre><code>mkdir ./dir1
-mkdir /tmp/dir2
-</code></pre><h5 id="10-chown"><a href="#10-chown" class="headerlink" title="10. chown"></a>10. chown</h5><p>chown(CHange file OWNer and group)修改文件或目录的所有者和用户组。如，把文件修改为apache所有，用户组未root：</p>
-<pre><code>chown apache:root fileA
-</code></pre><p>对于目录，如果连同目录内的文件和子目录也要修改，需要带上<code>-R</code>参数，否则将只修改目录本身：</p>
-<pre><code>chown -R apache:root DirecA
-</code></pre><h5 id="11-chmod"><a href="#11-chmod" class="headerlink" title="11. chmod"></a>11. chmod</h5><p>chmod(CHange file MODes)修改文件或目录的模式位(权限)。</p>
+mkdir /tmp/dir2</code></pre><h5 id="10-chown"><a href="#10-chown" class="headerlink" title="10. chown"></a>10. chown</h5><p>chown(CHange file OWNer and group)修改文件或目录的所有者和用户组。如，把文件修改为apache所有，用户组未root：</p>
+<pre><code>chown apache:root fileA</code></pre><p>对于目录，如果连同目录内的文件和子目录也要修改，需要带上<code>-R</code>参数，否则将只修改目录本身：</p>
+<pre><code>chown -R apache:root DirecA</code></pre><h5 id="11-chmod"><a href="#11-chmod" class="headerlink" title="11. chmod"></a>11. chmod</h5><p>chmod(CHange file MODes)修改文件或目录的模式位(权限)。</p>
 <p>了解了文件的所有者和用户组的概念后，需要知道，文件(或目录)有严格的权限管理，例如上面ll命令的结果可以看到形如<code>drwx------</code>的就表示权限(除了第一位d表示这是个目录)。</p>
 <p><code>rwxrwxrwx</code>中，前3位表示所有者的权限，中间3位表示用户组的权限，后3位表示其他人的权限。</p>
 <p>这3位又分别代表了读(r)、写(w)、执行(x)权限，如果按照1代表有权限，0代表没权限的，那么可读+可写+不可执行可以表示为<code>110</code>，而这个二进制数转化成十进制相当于<code>6</code>。类似的只读就是<code>100</code>，转化为十进制就是<code>4</code>。终上所述：如果你希望一个文件的拥有者“可读+可写+不可执行”，用户组“只读”，其他人什么都不能操作，那么这个文件的权限用十进制可以表示为<code>640</code>，操作命令即：</p>
-<pre><code>chmod 640 fileA
-</code></pre><p>同时，chmod还可以使用u（user）、g（group）、o（other）、a（all）和+（加入）、-（删除）、=（设置）跟rwx搭配来对文件的权限进行更改。如向fileA的文件权限中加入用户组可写权限：</p>
-<pre><code>chmod g+w fileA
-</code></pre><p>又如向fileB的文件权限中删除拥有者可执行权限：</p>
-<pre><code>chmod u-x fileB
-</code></pre><p>同样的，对于目录，如果连同目录内的文件和子目录也要修改，需要带上<code>-R</code>参数，否则将只修改目录本身：</p>
-<pre><code>chmod -R 640 DirecA
-</code></pre><h5 id="12-tar"><a href="#12-tar" class="headerlink" title="12. tar"></a>12. tar</h5><p>tar(manipulate Tape ARchives)对文件进行压缩或解压。<br>常用的方法：</p>
+<pre><code>chmod 640 fileA</code></pre><p>同时，chmod还可以使用u（user）、g（group）、o（other）、a（all）和+（加入）、-（删除）、=（设置）跟rwx搭配来对文件的权限进行更改。如向fileA的文件权限中加入用户组可写权限：</p>
+<pre><code>chmod g+w fileA</code></pre><p>又如向fileB的文件权限中删除拥有者可执行权限：</p>
+<pre><code>chmod u-x fileB</code></pre><p>同样的，对于目录，如果连同目录内的文件和子目录也要修改，需要带上<code>-R</code>参数，否则将只修改目录本身：</p>
+<pre><code>chmod -R 640 DirecA</code></pre><h5 id="12-tar"><a href="#12-tar" class="headerlink" title="12. tar"></a>12. tar</h5><p>tar(manipulate Tape ARchives)对文件进行压缩或解压。<br>常用的方法：</p>
 <pre><code>tar -zcf a.tgz fileA fileB direcA #压缩
-tar -zxf a.tgz #解压
-</code></pre><p>常用参数：</p>
+tar -zxf a.tgz #解压</code></pre><p>常用参数：</p>
 <pre><code>-c：新建压缩文件，压缩时候使用  
 -t：查看压缩文件的内容 
 -x：解压缩文件，解压时候使用。-c,-t,-x不能同时出现
@@ -532,15 +409,13 @@ tar -zxf a.tgz #解压
 -v：在压缩/解压缩过程中，将正在处理的文件名显示出来  
 -f filename：filename为要处理的文件  
 -C dir：指定压缩/解压缩的目录dir
---exclude：排除指定的文件或目录，可用通配符
-</code></pre><p>注：除了<code>-t</code>可以查看压缩包内容外，用vim也可以查看。</p>
+--exclude：排除指定的文件或目录，可用通配符</code></pre><p>注：除了<code>-t</code>可以查看压缩包内容外，用vim也可以查看。</p>
 <h5 id="13-grep"><a href="#13-grep" class="headerlink" title="13. grep"></a>13. grep</h5><p>grep是一个非常强大的搜索工具，他会分析一行信息，并找到我们需要的信息打印出来。grep的帮助信息如下：</p>
 <pre><code>grep -h
 usage: grep [-abcDEFGHhIiJLlmnOoqRSsUVvwxZ] [-A num] [-B num] [-C[num]]
     [-e pattern] [-f file] [--binary-files=value] [--color=when]
     [--context[=num]] [--directories=action] [--label] [--line-buffered]
-    [--null] [pattern] [file ...]
-</code></pre><p>看起来好复杂是不是。距离说明常用的地方会简单一些。</p>
+    [--null] [pattern] [file ...]</code></pre><p>看起来好复杂是不是。距离说明常用的地方会简单一些。</p>
 <p>在指定目录中的所有文件（或通配符包含的文件）中查找包含某一字符串的文件：</p>
 <pre><code>#将会显示包含some string的文件名和包含的那一列内容
 grep &apos;some string&apos; *.php
@@ -549,136 +424,105 @@ grep &apos;some string&apos; *.php
 grep &apos;some string&apos; *.php -l
 
 #如果搜索的是目录，且希望递归目录搜索，可以使用-r参数
-grep &apos;some string&apos; /some/path -rl
-</code></pre><p>配合其他命令，只显示需要的信息：</p>
+grep &apos;some string&apos; /some/path -rl</code></pre><p>配合其他命令，只显示需要的信息：</p>
 <pre><code>#针对ls -l的结果，仅显示后缀是php的文件
-ls -l | grep .php
-</code></pre><p>更进阶的grep操作，由于篇幅原因没法全部列举，感兴趣可以Google找到相关信息。</p>
+ls -l | grep .php</code></pre><p>更进阶的grep操作，由于篇幅原因没法全部列举，感兴趣可以Google找到相关信息。</p>
 <h5 id="14-find"><a href="#14-find" class="headerlink" title="14. find"></a>14. find</h5><p>find文件查找。</p>
 <pre><code>find -h
 find: illegal option -- h
 usage: find [-H | -L | -P] [-EXdsx] [-f path] path ... [expression]
-    find [-H | -L | -P] [-EXdsx] -f path [path ...] [expression]
-</code></pre><p>看起来也好复杂是不是。距离说明常用的地方会简单一些。</p>
+    find [-H | -L | -P] [-EXdsx] -f path [path ...] [expression]</code></pre><p>看起来也好复杂是不是。距离说明常用的地方会简单一些。</p>
 <p>根据文件名查找文件：</p>
 <pre><code>#查找/path目录下以a开头的所有文件
-find /path -name &apos;a*&apos;
-</code></pre><p>根据文件修改日期查找：</p>
+find /path -name &apos;a*&apos;</code></pre><p>根据文件修改日期查找：</p>
 <pre><code>参数：
 -mtime n: 在n天之前的“一天内”被更改过的文件  
 -mtime +n: 在n天之前（不含n天本身）被更改过的文件
 -mtime -n : 在n天之内（含n天本身）被更改过的文件
 
 #查找/path目录下今天之内有改动过的所有文件
-find /path -mtime 0
-</code></pre><p>配合xargs使用：</p>
+find /path -mtime 0</code></pre><p>配合xargs使用：</p>
 <pre><code>#查找/path目录下今天之内有改动过的所有文件，并打包成压缩文件
-find /path -mtime 0 | xargs tar -zcf a.tgz
-</code></pre><p>关于xargs和他的用法，Google可以找到详细的信息。</p>
+find /path -mtime 0 | xargs tar -zcf a.tgz</code></pre><p>关于xargs和他的用法，Google可以找到详细的信息。</p>
 <p>更进阶的find操作，由于篇幅原因没法全部列举，感兴趣可以Google找到相关信息。</p>
 <h5 id="15-date"><a href="#15-date" class="headerlink" title="15. date"></a>15. date</h5><p>date打印或设置系统日期时间。</p>
 <pre><code>date
 2016年 8月 4日 星期四 15时32分17秒 CST
-date -s &apos;2016-08-04 15:00:00&apos; #设置系统日期时间
-</code></pre><p>注意，<code>date -s</code>只设置了系统的时间，如果要同步到硬件时间，需要再执行<code>hwclock -w</code>。关于系统时钟和硬件时钟以及两者之间的关系和同步，自行Google。</p>
+date -s &apos;2016-08-04 15:00:00&apos; #设置系统日期时间</code></pre><p>注意，<code>date -s</code>只设置了系统的时间，如果要同步到硬件时间，需要再执行<code>hwclock -w</code>。关于系统时钟和硬件时钟以及两者之间的关系和同步，自行Google。</p>
 <h5 id="16-shutdown"><a href="#16-shutdown" class="headerlink" title="16. shutdown"></a>16. shutdown</h5><p>shutdown可用于让系统关机或重启：</p>
 <pre><code>shutdown -h now #马上关机
 shutdown -h 20:00 #20:00关机
 shutdown -r now #马上重启
-shutdown -r +5 #5分钟后重启
-</code></pre><p>注：时间参数是必须的。</p>
+shutdown -r +5 #5分钟后重启</code></pre><p>注：时间参数是必须的。</p>
 <h5 id="17-kill"><a href="#17-kill" class="headerlink" title="17. kill"></a>17. kill</h5><p>kill(terminate or signal a process)，常用于杀死一个进程：</p>
-<pre><code>kill -9 [pid]
-</code></pre><p>具体使用方法<code>man kill</code>会有更详细介绍。</p>
+<pre><code>kill -9 [pid]</code></pre><p>具体使用方法<code>man kill</code>会有更详细介绍。</p>
 <h5 id="18-service"><a href="#18-service" class="headerlink" title="18. service"></a>18. service</h5><p>service用于管理系统服务。可用的命令包括<code>start</code>、<code>restart</code>、<code>stop</code>、<code>status</code>、<code>reload</code>。如重启httpd服务：</p>
-<pre><code>service httpd restart
-</code></pre><p>注：对于rhel7，变成使用<code>systemctl restart httpd</code>。</p>
+<pre><code>service httpd restart</code></pre><p>注：对于rhel7，变成使用<code>systemctl restart httpd</code>。</p>
 <p>service通常配合chkconfig使用。chkconfig可用于设置服务开机启动/不启动：</p>
 <pre><code>chkconfig httpd on
-chkconfig mysqld off
-</code></pre><h5 id="19-du"><a href="#19-du" class="headerlink" title="19. du"></a>19. du</h5><p>du(display Disk Usage statistics)磁盘用量，可以查看磁盘的使用情况，通常带的参数是<code>-h</code>，可让用量数值易读。</p>
+chkconfig mysqld off</code></pre><h5 id="19-du"><a href="#19-du" class="headerlink" title="19. du"></a>19. du</h5><p>du(display Disk Usage statistics)磁盘用量，可以查看磁盘的使用情况，通常带的参数是<code>-h</code>，可让用量数值易读。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上这些命令是暂时能想到的，常用的且比较入门级的，当然，linux下的高阶命令还是有非常之多，还有管道命令、通配符等等，有兴趣可以自己摸索。</p>
 <p>个人知识有限，以上若有不当或错误之处，欢迎指正 :)</p>
 
-      
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+        
       
-        <div class="post-tags">
+
+      <footer class="post-footer">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/strtolower-and-mb_strtolower/" rel="next" title="strtolower 和 mb_strtolower 的区别">
-                <i class="fa fa-chevron-left"></i> strtolower 和 mb_strtolower 的区别
-              </a>
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
             
           </div>
+        
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/phpexcel-out-of-memory/" rel="prev" title="PHPExcel Out Of Memory">
-                PHPExcel Out Of Memory <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2016/04/strtolower-and-mb_strtolower/" rel="next" title="strtolower 和 mb_strtolower 的区别">
+                  <i class="fa fa-chevron-left"></i> strtolower 和 mb_strtolower 的区别
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2016/08/phpexcel-out-of-memory/" rel="prev" title="PHPExcel Out Of Memory">
+                  PHPExcel Out Of Memory <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
           </div>
-        </div>
-      
-
-      
-      
-    </footer>
+        
+      </footer>
+    
   </div>
   
   
   
   </article>
 
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
-
+    
+    <div class="comments" id="comments"></div>
   
-    <div class="comments" id="comments">
-    </div>
-  
-
-
 
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -690,12 +534,7 @@ chkconfig mysqld off
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
-
-      
-
-      
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
@@ -706,142 +545,148 @@ chkconfig mysqld off
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
+
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="LittleyLv" />
-            
-              <p class="site-author-name" itemprop="name">LittleyLv</p>
-              <p class="site-description motion-element" itemprop="description">十月初壹</p>
-          </div>
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Siuwing Leoi">
+  <p class="site-author-name" itemprop="name">Siuwing Leoi</p>
+  <div class="site-description motion-element" itemprop="description">十月初壹</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/littleylv" title="GitHub &rarr; https://github.com/littleylv" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:zcy4089@gmail.com" title="E-Mail &rarr; mailto:zcy4089@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://twitter.com/zcy4089" title="Twitter &rarr; https://twitter.com/zcy4089" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+    
+  </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">16</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/littleylv" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://twitter.com/zcy4089" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
 
         </div>
-      </section>
-
-      
+      </div>
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -849,63 +694,46 @@ chkconfig mysqld off
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
-      
-
       
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">LittleyLv</span>
-
-  
-
-  
+  <span class="author" itemprop="copyrightHolder">Siuwing Leoi</span>
 </div>
-
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv" title="总访客量">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
       <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
     </span>
   
-
+    <span class="post-meta-divider">|</span>
   
-    <span class="site-pv" title="总访问量">
+    <span class="post-meta-item-icon">
       <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
     </span>
   
@@ -918,111 +746,34 @@ chkconfig mysqld off
 
 
 
-
         
       </div>
     </footer>
-
-    
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
           <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
-    
 
     
 
   </div>
 
   
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
 
 
-
+  <script src="/js/schemes/muse.js?v=7.3.0"></script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
-
-
-
-  
-
-
-
-	
-
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
@@ -1034,153 +785,101 @@ chkconfig mysqld off
 
 
   
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  
-  
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(function (item) {
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'bjuUq95X2Gg4EbXSgSWlbxeH-gzGzoHsz',
-        appKey: 'LfSfflNqzGidrjNJPFUSNEQM',
-        placeholder: '这个人懒得啥都不说 😂',
-        avatar:'identicon',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("bjuUq95X2Gg4EbXSgSWlbxeH-gzGzoHsz", "LfSfflNqzGidrjNJPFUSNEQM");</script>
   <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
+      Counter('get', `/classes/Counter?${JSON.stringify({ where: url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
       });
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
           if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
             return;
           }
-
           for (var i = 0; i < results.length; i++) {
             var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
           }
-          for(var i = 0; i < entries.length; i++) {
+          for (var i = 0; i < entries.length; i++) {
             var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
             }
           }
         })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
         });
     }
+  }
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            
-            counter.save(null, {
-              success: function(counter) {
-                
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
-                
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            
-              var newcounter = new Counter();
-              /* Set ACL */
-              var acl = new AV.ACL();
-              acl.setPublicReadAccess(true);
-              acl.setPublicWriteAccess(true);
-              newcounter.setACL(acl);
-              /* End Set ACL */
-              newcounter.set("title", title);
-              newcounter.set("url", url);
-              newcounter.set("time", 1);
-              newcounter.save(null, {
-                success: function(newcounter) {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-                },
-                error: function(newcounter, error) {
-                  console.log('Failed to create');
-                }
-              });
-            
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
+  fetch('https://app-router.leancloud.cn/2/route?appId=bjuUq95X2Gg4EbXSgSWlbxeH-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'bjuUq95X2Gg4EbXSgSWlbxeH-gzGzoHsz',
+            'X-LC-Key': 'LfSfflNqzGidrjNJPFUSNEQM',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        //if (localhost.test(document.URL)) return;
         addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
     });
@@ -1188,90 +887,63 @@ chkconfig mysqld off
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 
   
 
   
-  
+
 
   
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
 
-  
 
-  
+    
 
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
-
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'bjuUq95X2Gg4EbXSgSWlbxeH-gzGzoHsz',
+    appKey: 'LfSfflNqzGidrjNJPFUSNEQM',
+    placeholder: '这个人懒得啥都不说 😂',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

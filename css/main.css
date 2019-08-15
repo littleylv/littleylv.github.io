@@ -1707,7 +1707,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #dfd52f;
+  background: #ff38ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2490,21 +2490,6 @@ hr {
 }
 .post-button a:hover {
   border-bottom-color: #222;
-}
-.sidebar {
-  left: 0;
-  right: auto;
-}
-.sidebar-toggle,
-.back-to-top {
-  left: 30px;
-  right: auto;
-}
-@media (max-width: 991px) {
-  .sidebar-toggle,
-  .back-to-top {
-    left: 20px;
-  }
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;

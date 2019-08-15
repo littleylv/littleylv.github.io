@@ -29,7 +29,7 @@
     scheme: 'Mist',
     version: '7.3.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     save_scroll: false,
     copycode: {"enable":true,"show_result":false,"style":null},
@@ -128,7 +128,7 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  <div class="container sidebar-position-left">
+  <div class="container sidebar-position-right">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -642,15 +642,15 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=bjuUq95X2Gg4EbXSgSWlbxeH-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=mxgxbwWFscYQ4jdd0tpq1RiH-MdYXbMMI')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method: method,
           headers: {
-            'X-LC-Id': 'bjuUq95X2Gg4EbXSgSWlbxeH-gzGzoHsz',
-            'X-LC-Key': 'LfSfflNqzGidrjNJPFUSNEQM',
+            'X-LC-Id': 'mxgxbwWFscYQ4jdd0tpq1RiH-MdYXbMMI',
+            'X-LC-Key': 'IGrGz1kMFH7qX8nWlIKQKUNn',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)

@@ -795,7 +795,7 @@ chkconfig mysqld off</code></pre><h5 id="19-du"><a href="#19-du" class="headerli
       var url = visitors.getAttribute('id').trim();
       var title = visitors.getAttribute('data-flag-title').trim();
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+      Counter('get', `/classes/Counter?${JSON.stringify({ where: url })}`)
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {

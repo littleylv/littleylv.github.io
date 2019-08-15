@@ -6,6 +6,7 @@
 {"title":"常用Linux命令","url":"/2016/08/linux-commands/"},
 {"title":"PHPExcel Out Of Memory","url":"/2016/08/phpexcel-out-of-memory/"},
 {"title":"整理用到的一些第三方开源库","url":"/2016/12/Third-party-libraries/"},
+{"title":"CentOS 6.7 中把Mysql从 5.1 升级到 5.6","url":"/2016/12/rhel67-upgrade-mysql-from-51-to-56/"},
 {"title":"macOS Sierra 10.12.2 ssh每次提示输入密码的问题","url":"/2017/01/SSH-key-passphrase-use-keychain/"},
 {"title":"使用Grafana + Influxdb + Telegraf搭建监控平台","url":"/2017/05/monitor-application-used-grafana/"},
 {"title":"ACGs & Movies & TVs","url":"/2017/07/ACGs-Movies-TVs/"},

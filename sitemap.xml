@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://littleylv.github.io/about/index.html</loc>
+    
+    <lastmod>2020-05-22T11:58:13.976Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://littleylv.github.io/2017/07/ACGs-Movies-TVs/</loc>
     
     <lastmod>2019-08-14T12:16:56.000Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://littleylv.github.io/2018/04/clean-xcode-cache/</loc>
     
     <lastmod>2018-04-24T16:00:43.753Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://littleylv.github.io/about/index.html</loc>
-    
-    <lastmod>2018-04-24T14:48:19.154Z</lastmod>
     
   </url>
   
@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>https://littleylv.github.io/2016/08/phpexcel-out-of-memory/</loc>
+    <loc>https://littleylv.github.io/2016/04/strtolower-and-mb_strtolower/</loc>
     
     <lastmod>2017-07-10T08:10:52.772Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://littleylv.github.io/2016/04/strtolower-and-mb_strtolower/</loc>
+    <loc>https://littleylv.github.io/2016/08/phpexcel-out-of-memory/</loc>
     
     <lastmod>2017-07-10T08:10:52.772Z</lastmod>
     

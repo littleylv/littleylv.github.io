@@ -13,38 +13,12 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://littleylv.github.io').hostname,
-    root: '/',
-    scheme: 'Muse',
-    version: '7.6.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"littleylv.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="十月初壹">
 <meta property="og:type" content="website">
@@ -66,8 +40,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -110,43 +85,32 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">十月初壹</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">十月初壹</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
 
 
-<nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
-  </li>
-        <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
-  </li>
-  </ul>
 
-</nav>
 </div>
     </header>
 
@@ -162,14 +126,12 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content index posts-expand">
             
-
-  <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2018/04/swift-basic-detect-volume-changed/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -182,15 +144,15 @@
       <meta itemprop="name" content="十月初壹">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/04/swift-basic-detect-volume-changed/" class="post-title-link" itemprop="url">Swift 基础之：监听音量变化</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
               
@@ -199,13 +161,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/WORK/" itemprop="url" rel="index">
-                    <span itemprop="name">WORK</span>
-                  </a>
+                  <a href="/categories/WORK/" itemprop="url" rel="index"><span itemprop="name">WORK</span></a>
                 </span>
             </span>
 
@@ -220,7 +180,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          Swift 基础之：监听音量变化。
+          <p>Swift 基础之：监听音量变化。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/04/swift-basic-detect-volume-changed/">
@@ -243,10 +203,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2018/04/swift-basic-gesture-recognizer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -259,15 +219,15 @@
       <meta itemprop="name" content="十月初壹">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/04/swift-basic-gesture-recognizer/" class="post-title-link" itemprop="url">Swift 基础之：手势识别</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
               
@@ -276,13 +236,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/WORK/" itemprop="url" rel="index">
-                    <span itemprop="name">WORK</span>
-                  </a>
+                  <a href="/categories/WORK/" itemprop="url" rel="index"><span itemprop="name">WORK</span></a>
                 </span>
             </span>
 
@@ -297,7 +255,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          Swift 基础之：手势识别。
+          <p>Swift 基础之：手势识别。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/04/swift-basic-gesture-recognizer/">
@@ -320,10 +278,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2018/04/clean-xcode-cache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,15 +294,15 @@
       <meta itemprop="name" content="十月初壹">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/04/clean-xcode-cache/" class="post-title-link" itemprop="url">清理 Xcode 缓存</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -352,20 +310,18 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2018-04-25 00:00:43" itemprop="dateModified" datetime="2018-04-25T00:00:43+08:00">2018-04-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/WORK/" itemprop="url" rel="index">
-                    <span itemprop="name">WORK</span>
-                  </a>
+                  <a href="/categories/WORK/" itemprop="url" rel="index"><span itemprop="name">WORK</span></a>
                 </span>
             </span>
 
@@ -380,7 +336,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。
+          <p>清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/04/clean-xcode-cache/">
@@ -403,10 +359,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2018/04/swift-basic-for-loop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -419,15 +375,15 @@
       <meta itemprop="name" content="十月初壹">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/04/swift-basic-for-loop/" class="post-title-link" itemprop="url">Swift 基础之：for 循环</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -435,20 +391,18 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2018-04-25 16:13:09" itemprop="dateModified" datetime="2018-04-25T16:13:09+08:00">2018-04-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/WORK/" itemprop="url" rel="index">
-                    <span itemprop="name">WORK</span>
-                  </a>
+                  <a href="/categories/WORK/" itemprop="url" rel="index"><span itemprop="name">WORK</span></a>
                 </span>
             </span>
 
@@ -463,7 +417,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          Swift 基础之：for 循环。
+          <p>Swift 基础之：for 循环。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/04/swift-basic-for-loop/">
@@ -486,10 +440,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2017/07/ACGs-Movies-TVs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -502,15 +456,15 @@
       <meta itemprop="name" content="十月初壹">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2017/07/ACGs-Movies-TVs/" class="post-title-link" itemprop="url">ACGs & Movies & TVs</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -518,20 +472,18 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-08-14 20:16:56" itemprop="dateModified" datetime="2019-08-14T20:16:56+08:00">2019-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LIFE/" itemprop="url" rel="index">
-                    <span itemprop="name">LIFE</span>
-                  </a>
+                  <a href="/categories/LIFE/" itemprop="url" rel="index"><span itemprop="name">LIFE</span></a>
                 </span>
             </span>
 
@@ -546,7 +498,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          记录一些看过动漫、电影、电视剧，玩过的游戏。不定期更新。
+          <p>记录一些看过动漫、电影、电视剧，玩过的游戏。不定期更新。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/07/ACGs-Movies-TVs/">
@@ -569,10 +521,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2017/07/mysql-group-by-order/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -585,15 +537,15 @@
       <meta itemprop="name" content="十月初壹">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2017/07/mysql-group-by-order/" class="post-title-link" itemprop="url">Mysql group by 分组内排序</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
               
@@ -602,13 +554,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/WORK/" itemprop="url" rel="index">
-                    <span itemprop="name">WORK</span>
-                  </a>
+                  <a href="/categories/WORK/" itemprop="url" rel="index"><span itemprop="name">WORK</span></a>
                 </span>
             </span>
 
@@ -623,7 +573,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          Mysql 分组的时候根据组内排序取得一条结果的方案。
+          <p>Mysql 分组的时候根据组内排序取得一条结果的方案。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/07/mysql-group-by-order/">
@@ -646,10 +596,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2017/05/monitor-application-used-grafana/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -662,15 +612,15 @@
       <meta itemprop="name" content="十月初壹">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2017/05/monitor-application-used-grafana/" class="post-title-link" itemprop="url">使用Grafana + Influxdb + Telegraf搭建监控平台</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -678,20 +628,18 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2017-07-10 16:33:50" itemprop="dateModified" datetime="2017-07-10T16:33:50+08:00">2017-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/WORK/" itemprop="url" rel="index">
-                    <span itemprop="name">WORK</span>
-                  </a>
+                  <a href="/categories/WORK/" itemprop="url" rel="index"><span itemprop="name">WORK</span></a>
                 </span>
             </span>
 
@@ -706,7 +654,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          使用Grafana + Influxdb + Telegraf搭建漂亮的、可视化的监控平台。
+          <p>使用Grafana + Influxdb + Telegraf搭建漂亮的、可视化的监控平台。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/05/monitor-application-used-grafana/">
@@ -729,10 +677,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://littleylv.github.io/2017/01/SSH-key-passphrase-use-keychain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -745,15 +693,15 @@
       <meta itemprop="name" content="十月初壹">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2017/01/SSH-key-passphrase-use-keychain/" class="post-title-link" itemprop="url">macOS Sierra 10.12.2 ssh每次提示输入密码的问题</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -761,20 +709,18 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2017-07-10 16:10:52" itemprop="dateModified" datetime="2017-07-10T16:10:52+08:00">2017-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/macOS/" itemprop="url" rel="index">
-                    <span itemprop="name">macOS</span>
-                  </a>
+                  <a href="/categories/macOS/" itemprop="url" rel="index"><span itemprop="name">macOS</span></a>
                 </span>
             </span>
 
@@ -812,7 +758,6 @@
   
   
 
-  </div>
 
   
   <nav class="pagination">
@@ -826,7 +771,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -880,8 +825,7 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
+          <a href="/archives">
           <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
@@ -915,19 +859,18 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Siuwing Leoi</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> 强力驱动 v4.2.1
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Muse</a> v7.6.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
         

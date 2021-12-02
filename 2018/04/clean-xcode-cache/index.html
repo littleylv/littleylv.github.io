@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.siuwing.me","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="清理 Xcode 缓存">
+<meta property="og:url" content="https://www.siuwing.me/2018/04/clean-xcode-cache/index.html">
+<meta property="og:site_name" content="十月初壹">
+<meta property="og:description" content="清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-04-24T15:27:25.000Z">
+<meta property="article:modified_time" content="2021-12-02T13:12:00.839Z">
+<meta property="article:author" content="Siuwing Leoi">
+<meta property="article:tag" content="Xcode">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.siuwing.me/2018/04/clean-xcode-cache/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.siuwing.me/2018/04/clean-xcode-cache/","path":"2018/04/clean-xcode-cache/","title":"清理 Xcode 缓存"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>清理 Xcode 缓存 | 十月初壹</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?73832f787ac884418e31b5143b3a52c6"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">十月初壹</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-collections"><a href="/collections/" rel="section"><i class="fa fa-star fa-fw"></i>收藏</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85-APP-%E4%BA%A7%E7%94%9F%E7%9A%84%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6-DerivedData"><span class="nav-number">1.</span> <span class="nav-text">移除运行安装 APP 产生的缓存文件(DerivedData)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4-APP-%E6%89%93%E5%8C%85%E7%9A%84ipa%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC-Archives"><span class="nav-number">2.</span> <span class="nav-text">移除 APP 打包的ipa历史版本(Archives)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4-APP-%E6%89%93%E5%8C%85%E7%9A%84app-icon%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC-Archives"><span class="nav-number">3.</span> <span class="nav-text">移除 APP 打包的app icon历史版本(Archives)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E6%A8%A1%E6%8B%9F%E5%99%A8%E7%9A%84%E7%BC%93%E5%AD%98%E6%95%B0%E6%8D%AE-Devices"><span class="nav-number">4.</span> <span class="nav-text">移除模拟器的缓存数据(Devices)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E5%AF%B9%E6%97%A7%E8%AE%BE%E5%A4%87%E7%9A%84%E6%94%AF%E6%8C%81-iOS-DeviceSupport"><span class="nav-number">5.</span> <span class="nav-text">移除对旧设备的支持(iOS DeviceSupport)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E6%97%A7%E7%89%88%E6%9C%AC%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E6%94%AF%E6%8C%81"><span class="nav-number">6.</span> <span class="nav-text">移除旧版本的模拟器支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4-playground-%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BC%93%E5%AD%98-XCPGDevices"><span class="nav-number">7.</span> <span class="nav-text">移除 playground 的项目缓存(XCPGDevices)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E6%97%A7%E7%9A%84%E6%96%87%E6%A1%A3-Docsets"><span class="nav-number">8.</span> <span class="nav-text">移除旧的文档(Docsets)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E6%A8%A1%E6%8B%9F%E5%99%A8%E4%B8%AD%E7%9A%84SDK%E7%89%88%E6%9C%AC-iPhoneSimulator-sdk"><span class="nav-number">9.</span> <span class="nav-text">移除模拟器中的SDK版本(iPhoneSimulator.sdk)</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Siuwing Leoi"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Siuwing Leoi</p>
+  <div class="site-description" itemprop="description">十月初壹</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/littleylv" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;littleylv" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zcy4089@gmail.com" title="E-Mail → mailto:zcy4089@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/zcy4089" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;zcy4089" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/9903955/littleylv" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;9903955&#x2F;littleylv" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.siuwing.me/2018/04/clean-xcode-cache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Siuwing Leoi">
+      <meta itemprop="description" content="十月初壹">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="十月初壹">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          清理 Xcode 缓存
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-04-24 23:27:25" itemprop="dateCreated datePublished" datetime="2018-04-24T23:27:25+08:00">2018-04-24</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-12-02 21:12:00" itemprop="dateModified" datetime="2021-12-02T21:12:00+08:00">2021-12-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/WORK/" itemprop="url" rel="index"><span itemprop="name">WORK</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/04/clean-xcode-cache/" class="post-meta-item leancloud_visitors" data-flag-title="清理 Xcode 缓存" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/04/clean-xcode-cache/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/clean-xcode-cache/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">清理 Xcode 缓存，释放可怜的 MBP 硬盘空间。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Xcode 是个逆天的存在。本身占用了 11+G 的硬盘，平常用着用着还会生成很多缓存数据。虽然缓存可以加快编译、运行等速度，但 128G 的小硬盘根本经不起折腾，所以需要定期清理一下空间。</p>
+<p>以下为网络上搜集到的资料，运行完后，曾经释放了 20G 的空间。</p>
+<p>注：以下基于 Xcode 9.3 版本，其他版本位置可能有所不同。</p>
+<h4 id="移除运行安装-APP-产生的缓存文件-DerivedData"><a href="#移除运行安装-APP-产生的缓存文件-DerivedData" class="headerlink" title="移除运行安装 APP 产生的缓存文件(DerivedData)"></a>移除运行安装 APP 产生的缓存文件(DerivedData)</h4><p>只要重新运行 Xcode 就一定会重新生成，而且会随着运行程序的增多，占用空间会越来越大。删除后在重新运行程序可能会稍微慢一点，建议定期清理。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/Xcode/DerivedData</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除-APP-打包的ipa历史版本-Archives"><a href="#移除-APP-打包的ipa历史版本-Archives" class="headerlink" title="移除 APP 打包的ipa历史版本(Archives)"></a>移除 APP 打包的ipa历史版本(Archives)</h4><p>删除后不可恢复，文件夹是按照日期排列的，所以如果你不想全部删除，就只保留最新的几个版本就好了，个人建议全部删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/Xcode/Archives</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除-APP-打包的app-icon历史版本-Archives"><a href="#移除-APP-打包的app-icon历史版本-Archives" class="headerlink" title="移除 APP 打包的app icon历史版本(Archives)"></a>移除 APP 打包的app icon历史版本(Archives)</h4><p>删除后不可恢复，文件夹是Bundle Idenifier排列的，然后再按照archive的版本号排列的，如果你看每个版本内的内容，其实就是你的app icon，个人建议全部删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/Xcode/Products</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除模拟器的缓存数据-Devices"><a href="#移除模拟器的缓存数据-Devices" class="headerlink" title="移除模拟器的缓存数据(Devices)"></a>移除模拟器的缓存数据(Devices)</h4><p>模拟器的相关数据。每个版本的模拟器占用的内存空间大约为10M左右。每个文件夹里包含的就是一个特定系统版本的设备的数据。每个文件夹对应哪个设备可以在其下device.plist中查看。删除之后，如果立即运行程序会报错，先关闭Xcode，再重新打开程序，运行即可。运行该路径下会立马生成模拟器对应版本的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/CoreSimulator/Devices</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除对旧设备的支持-iOS-DeviceSupport"><a href="#移除对旧设备的支持-iOS-DeviceSupport" class="headerlink" title="移除对旧设备的支持(iOS DeviceSupport)"></a>移除对旧设备的支持(iOS DeviceSupport)</h4><p>一般是占用内存空间最大的文件夹，即使全部删，再连接设备调试时，会重新自动生成。一般iOS只向下兼容两个版本就可以了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除旧版本的模拟器支持"><a href="#移除旧版本的模拟器支持" class="headerlink" title="移除旧版本的模拟器支持"></a>移除旧版本的模拟器支持</h4><p>如果你不小心安装了很多个版本的模拟器，那么你可以删除一些旧版本的。但是当你需要旧版本的模拟器时，就需要重新下载了。建议留下1~2个版本就好了，其余的都删了吧。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/CoreSimulator/Profiles/Runtimes</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除-playground-的项目缓存-XCPGDevices"><a href="#移除-playground-的项目缓存-XCPGDevices" class="headerlink" title="移除 playground 的项目缓存(XCPGDevices)"></a>移除 playground 的项目缓存(XCPGDevices)</h4><p>删除后可重新生成，可以全部删除。再次运行程序会缓存。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/XCPGDevices</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除旧的文档-Docsets"><a href="#移除旧的文档-Docsets" class="headerlink" title="移除旧的文档(Docsets)"></a>移除旧的文档(Docsets)</h4><p>删除后不可恢复，该目录下存储的为开发文档，一般有三个文件com.apple.adc.documentation.iOS.docset(1.68GB)、com.apple.adc.documentation.OSX.docset(2.62GB)和com.apple.adc.documentation.Xcode.docset(256.4M)，如果你只做iOS开发，其实你可以把OSX.docset删除掉的，因为它占用了2.62GB的内存。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/Shared/Documentation/DocSets</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除模拟器中的SDK版本-iPhoneSimulator-sdk"><a href="#移除模拟器中的SDK版本-iPhoneSimulator-sdk" class="headerlink" title="移除模拟器中的SDK版本(iPhoneSimulator.sdk)"></a>移除模拟器中的SDK版本(iPhoneSimulator.sdk)</h4><p>不可恢复，操作请慎重。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/application/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Xcode/" rel="tag"># Xcode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/04/swift-basic-for-loop/" rel="prev" title="Swift 基础之：for 循环">
+                  <i class="fa fa-chevron-left"></i> Swift 基础之：for 循环
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/04/swift-basic-gesture-recognizer/" rel="next" title="Swift 基础之：手势识别">
+                  Swift 基础之：手势识别 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Siuwing Leoi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"mxgxbwWFscYQ4jdd0tpq1RiH-MdYXbMMI","app_key":"IGrGz1kMFH7qX8nWlIKQKUNn","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"LittleyLv","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
